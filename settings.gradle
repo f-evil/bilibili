@@ -1,0 +1,5 @@
+include ':app', ':opensdk', ':elinksdk', ':appcontroller', ':mainscreen'
+project(':opensdk').projectDir = new File('sdk/opensdk')
+project(':elinksdk').projectDir = new File('sdk/elinksdk')
+project(':appcontroller').projectDir = new File('sdk/appcontroller')
+project(':mainscreen').projectDir = new File('module/mainscreen')

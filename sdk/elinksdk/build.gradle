@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.chenenyu.router'
+
+android {
+    compileSdkVersion rootProject.ext.android.COMPILESDKVERSION
+    buildToolsVersion rootProject.ext.android.BUILDTOOLSVERSION
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.MINSDKVERSION
+        targetSdkVersion rootProject.ext.android.TARGETSDKVERSION
+        versionCode rootProject.ext.android.VERSIONCODE
+        versionName rootProject.ext.android.VERSIONNAME
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    compile project(':opensdk')
+    //butterknife
+    compile 'com.jakewharton:butterknife:' + rootProject.ext.dependencies.BUTTERKNIFE
+    annotationProcessor 'com.jakewharton:butterknife-compiler:' + rootProject.ext.dependencies.BUTTERKNIFE
+}

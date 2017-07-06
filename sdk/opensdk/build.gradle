@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.chenenyu.router'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    //V4
+    compile 'com.android.support:support-v4:' + rootProject.ext.dependencies.SUPPORTLIB
+    //support
+    compile 'com.android.support:appcompat-v7:' + rootProject.ext.dependencies.SUPPORTLIB
+    compile 'com.android.support:cardview-v7:' + rootProject.ext.dependencies.SUPPORTLIB_D
+    compile 'com.android.support:recyclerview-v7:' + rootProject.ext.dependencies.SUPPORTLIB_D
+    compile 'com.android.support:design:' + rootProject.ext.dependencies.SUPPORTLIB_D
+    //dialog
+    compile('com.afollestad.material-dialogs:core:' + rootProject.ext.dependencies.MATERIALDIALOGS) {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+    compile('com.afollestad.material-dialogs:commons:' + rootProject.ext.dependencies.MATERIALDIALOGS) {
+        exclude group: 'com.android.support', module: 'support-v7'
+    }
+
+    //Http
+    compile 'com.squareup.okhttp3:okhttp:' + rootProject.ext.dependencies.OKHTTP
+    compile 'com.squareup.okio:okio:' + rootProject.ext.dependencies.OKIO
+    //Json
+    compile 'com.alibaba:fastjson:' + rootProject.ext.dependencies.FASTJSON
+    //RxJava
+    compile 'io.reactivex:rxjava:' + rootProject.ext.dependencies.RXJAVA
+    compile 'io.reactivex:rxandroid:' + rootProject.ext.dependencies.RXANDROID
+    //http
+    compile 'com.zhy:okhttputils:' + rootProject.ext.dependencies.OKHTTPUTILS
+    //multidex
+    compile 'com.android.support:multidex:' + rootProject.ext.dependencies.MULTIDEX
+    //nineoldandroids
+    compile 'com.nineoldandroids:library:' + rootProject.ext.dependencies.NINEOLDANDROIDS
+    //glide
+    compile 'com.github.bumptech.glide:' + rootProject.ext.dependencies.GLIDE
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    compile 'cn.yipianfengye.android:zxing-library:2.1'
+
+}
