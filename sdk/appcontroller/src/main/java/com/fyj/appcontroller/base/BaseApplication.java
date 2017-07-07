@@ -134,11 +134,11 @@ public class BaseApplication extends SwipApplication {
      * 打开/关闭Log
      */
     private void initLogUtils() {
-        if (BuildConfig.APP_SERVICE_DEBUG) {
+//        if (BuildConfig.APP_SERVICE_DEBUG) {
             ELog.openLog();
-        } else {
-            ELog.closeLog();
-        }
+//        } else {
+//            ELog.closeLog();
+//        }
     }
 
     /**
