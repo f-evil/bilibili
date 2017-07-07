@@ -16,7 +16,7 @@ public class HttpConstant {
      * 域名集合
      */
     public interface Host {
-        String NB_ENTERPRISE_GOV_CN = "sms.87188718.com";
+        String BIIBILI = "app.bilibili.com";
     }
 
     /**

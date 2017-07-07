@@ -1,6 +1,5 @@
 package com.fyj.appcontroller.base;
 
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.res.Resources;
 
@@ -188,7 +187,6 @@ public class BaseApplication extends SwipApplication {
      */
     private void initSoftReference() {
         fbContext = new SoftReference<Context>(this);
-        GlobalVar.notifyManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
     }
 
 
